@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortitude Force IT Solutions</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #172D45;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #172D45;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1000;
+        }
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        .nav-links {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+        .nav-links li {
+            margin: 0;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #20A3DC;
+        }
+        .hero {
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a-photo-of-a-modern-office-building-with-glass-wal-ETkpR33FRKm26kjAK8Jk2A-2DvGNOivRu2XhW8dcAEGpw.jpg-3h2qUiRuFmMcyK8NpwdFW3BkKPd2vc.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #20A3DC;
+            opacity: 0.65;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+        .cta-button {
+            background-color: white;
+            color: #20A3DC;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #172D45;
+            color: white;
+        }
+        .services {
+            padding: 80px 0;
+            background-color: #f8f8f8;
+        }
+        .services h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #172D45;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .service-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+        .service-item h3 {
+            margin-top: 0;
+            color: #20A3DC;
+        }
+        .team {
+            padding: 80px 0;
+            background-color: white;
+        }
+        .team h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #172D45;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        .team-member {
+            text-align: center;
+        }
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+        .team-member h3 {
+            margin: 0;
+            color: #172D45;
+        }
+        .team-member p {
+            margin: 5px 0 0;
+            color: #20A3DC;
+        }
+
+        /*############==CONTACT==##############*/
+
+        .contact{
+            background: #f8f8f8;
+        }
+
+        .contact .box{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(30%,1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .contact .box i{
+            font-size: 1.5rem;
+            color: black;
+        }
+
+        .contact .box div{
+            font-size: 1.2rem;
+            color: black;
+            margin: 1rem 0;
+        }
+
+        .contact .row{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 5rem 0;
+        }
+
+        .contact .row .form-c input,textarea{
+            background: white;
+            border: 0.3rem solid #172D45;
+            padding: 1rem;
+            height: 1rem;
+            width: 90%;
+            margin: 0.7rem 0;
+            color: black;
+            font-size: 1rem;
+        }
+
+        .contact .row .iframe{
+            padding: 10px;
+        }
+
+        .contact .row .form-c input[type="submit"]{
+            background: grey;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            color: black;
+        }
+
+        .contact .row .form-c input[type="submit"]:hover{
+            background: grey;
+            color: black;
+        }
+
+        .contact .row .form-c textarea{
+            height: 10rem;
+            padding: 1rem;
+        }
+
+        .contact .heading{
+            margin: 2.5rem auto;
+            font-size: 1.1rem;
+            text-align: center;
+            padding-top: 55px;
+        }
+
+
+
+        footer {
+            background-color: #172D45;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        /*Button colorful*/
+
+         
+        button {
+        position: relative;
+        font-family: inherit;
+        font-size: 18px;
+        border-radius: 40em;
+        width: 8em;
+        height: 3em;
+        z-index: 1;
+        color: white;
+        cursor: pointer;
+        overflow: hidden;
+        border: none;
+        }
+
+        button .text {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        line-height: 3em;
+        border-radius: 40em;
+        border: none;
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.473),
+            rgba(150, 150, 150, 0.25)
+        );
+        z-index: 1;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        }
+
+        button .blob {
+        position: absolute;
+        z-index: -1;
+        border-radius: 5em;
+        width: 5em;
+        height: 3em;
+        transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+        }
+
+        button .blob:nth-child(2) {
+        left: 0em;
+        top: 0;
+        background: #0098ac;
+        }
+
+        button .blob:nth-child(3) {
+        left: 1.8em;
+        top: 0;
+        z-index: -1;
+        background: #27d4ff;
+        }
+
+        button .blob:nth-child(4) {
+        left: 4em;
+        top: -1em;
+        background: #013f1d;
+        }
+
+        button .blob:nth-child(5) {
+        left: 4.3em;
+        top: 1.6em;
+        background: #012a6bb7;
+        }
+
+        button:hover .blob:nth-child(2) {
+        background: #0097c5;
+        }
+
+        button:hover .blob:nth-child(3) {
+        background: #ffffff;
+        }
+
+        button:hover .blob:nth-child(4) {
+        background: #6dd1ff;
+        }
+
+        button:hover .blob:nth-child(5) {
+        background: #010388;
+        }
+
+        button:hover .blob {
+        transform: scale(1.3);
+        }
+
+        button:active {
+        border: 2px solid white;
+        }
+
+
+        @media (max-width: 756px) {
+            nav {
+                flex-wrap: wrap;
+            }
+            .nav-container {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #172D45;
+                z-index: 999;
+                justify-content: center;
+                align-items: center;
+            }
+            .nav-container.active {
+                display: flex;
+            }
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+                padding: 2rem 0;
+            }
+            .nav-links li {
+                margin: 0;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-links a {
+                display: block;
+                padding: 1rem;
+                font-size: 1.25rem;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .logo {
+                height: 40px;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a-clean-and-modern-logo-for-fortitude-it-solutions-ARDwiXXUR-O3cIyRl1ezMQ-Ym69DW8BR9yYgOw_Ah2ZvQ__1_-removebg-preview-ieIQgjNVnKjJgeuhFNRIJUz1Z6wCeS.png" alt="Fortitude IT Solutions Logo">
+            </div>
+            <div class="nav-container" id="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#services">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">About us</a></li>
+                </ul>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-container">☰</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>Empowering Your Digital Future</h1>
+            <p>Fortitude Force IT Solutions: Your Partner in Innovative Tech Services</p>
+            <!--<a href="#contact" class="cta-button">Get Started</a> -->
+            
+            <button>
+            <span class="text">Let's work</span>
+            <span class="blob"></span>
+            <span class="blob"></span>
+            <span class="blob"></span>
+            <span class="blob"></span>
+            </button>
+
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Web Development</h3>
+                    <p>Custom websites tailored to your business needs</p>
+                </div>
+                <div class="service-item">
+                    <h3>3D Animation</h3>
+                    <p>Get to animate your own world and get that feeling of your choice</p>
+                </div>
+                <div class="service-item">
+                    <h3>Games Programming</h3>
+                    <p>Create realistic games using Unity and Unreal engine.</p>
+                </div>
+                <div class="service-item">
+                    <h3>IT Support</h3>
+                    <p>24/7 technical support for your peace of mind</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team">
+        <div class="container">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Thobane Sithole">
+                    <h3>Thobane Sithole</h3>
+                    <p>CEO & Founder</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Bokang Tladi">
+                    <h3>Bokang Tladi</h3>
+                    <p>CEO & Founder</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Tumelo Sebotoma">
+                    <h3>Tumelo Sebotoma</h3>
+                    <p>Lead Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Kamogelo Makwela">
+                    <h3>Kamogelo Makwela</h3>
+                    <p>UX Designer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--===========CONTACT========-->
+    <section class="contact" id="contact">
+        <div class="heading">
+            <h2>Contact Us</h2>
+            <div></div>
+        </div>
+
+        <div class="box">
+
+            <div class="content">
+                <i class="fa-solid fa-phone"></i>
+                <div>Call: (071) 493 8109 / (063) 047 4611</div>
+                <div>Monday - Friday (08:00 - 16:00)</div>
+            </div>
+
+            <div class="content">
+                <i class="fa-solid fa-envelope"></i>
+                <div>Email: admin@fits.ac.za</div>
+                <div>web: www.fortitudeitsolutions.com</div>
+            </div>
+
+            <div class="content">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>Location: 109 Eros Street, Tsepo section, Tembisa, 1632</div>
+                <div>South Africa</div>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="ifarm">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28748.957368364634!2d28.165638230227138!3d-25.750088100950087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956213a2f4f16d%3A0x993da7df3774cd26!2sPretoria%20Central%2C%20Pretoria%2C%200002!5e0!3m2!1sen!2sza!4v1727017147035!5m2!1sen!2sza" width="550" height="430" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="form-c">
+                <input type="text" placeholder="Name" id="name">
+                <input type="email" placeholder="Email" id="email">
+                <input type="number" placeholder="Phone" id="phone">
+                <textarea name="" id="" cols="30" rows="10" placeholder="message" id="message"></textarea>
+                <input type="submit" value="send message">
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2024 Fortitude Force IT Solutions. All rights reserved.</p>
+            <p>Contact us: fortitudeforce@gmail.com | (063) 047-4611</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navContainer = document.querySelector('.nav-container');
+            const body = document.body;
+
+            function toggleMenu() {
+                navContainer.classList.toggle('active');
+                const expanded = navContainer.classList.contains('active');
+                menuToggle.setAttribute('aria-expanded', expanded);
+
+                // Toggle body scroll and menu icon
+                if (expanded) {
+                    body.style.overflow = 'hidden';
+                    menuToggle.innerHTML = '✕';
+                } else {
+                    body.style.overflow = '';
+                    menuToggle.innerHTML = '☰';
+                }
+            }
+
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleMenu();
+            });
+
+            // Close menu when a link is clicked
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navContainer.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    body.style.overflow = '';
+                    menuToggle.innerHTML = '☰';
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (event) => {
+                if (navContainer.classList.contains('active') &&
+                    !navContainer.contains(event.target) &&
+                    !menuToggle.contains(event.target)) {
+                    toggleMenu();
+                }
+            });
+
+            // Handle keyboard navigation
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && navContainer.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
